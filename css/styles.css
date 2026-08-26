@@ -1,0 +1,571 @@
+/* ==========================================================================
+   Firbeck Sailing Club — stylesheet
+   Design tokens below. To restyle the site, change values here only —
+   do not add inline styles or one-off colours in index.html.
+   ========================================================================== */
+
+:root {
+  /* Colour palette (design 1a "Clubhouse Classic") */
+  --navy: #16305c;
+  --navy-dark: #0b1c38;
+  --yellow: #f2c500;
+  --yellow-dark: #dcb400;
+  --cream: #f7f3e8;
+  --white: #ffffff;
+  --text-base: #23262b;
+  --text-body: #4a4f57;
+  --text-muted: #565b63;
+  /* --text-meta and --text-eyebrow are darkened from the original design
+     spec (#6b7079 / #8a8f98) so small text meets 4.5:1 contrast on
+     cream/white backgrounds. See CLAUDE.md accessibility requirement. */
+  --text-meta: #656a73;
+  --text-eyebrow: #676c75;
+  --hairline: rgba(22, 48, 92, 0.14);
+  --hairline-soft: rgba(22, 48, 92, 0.12);
+  --hairline-strong: rgba(22, 48, 92, 0.2);
+
+  /* Type */
+  --font-heading: "Source Serif 4", Georgia, serif;
+  --font-body: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --content-max: 1180px;
+  --radius: 2px;
+  --radius-plate: 3px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text-base);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, p, ol, ul, figure { margin: 0; }
+a { color: inherit; text-decoration: none; }
+ol, ul { padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Visible keyboard focus throughout, on both navy and light backgrounds */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  background: var(--white);
+  color: var(--navy);
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Shared band layout ---- */
+.band {
+  padding: 54px 44px;
+}
+.band-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 18px 40px;
+}
+.site-header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-logo {
+  width: 44px;
+  height: 56px;
+  object-fit: contain;
+  background: var(--yellow);
+  border-radius: var(--radius-plate);
+  flex-shrink: 0;
+}
+.brand-name {
+  font: 700 17px/1 var(--font-heading);
+  letter-spacing: 0.02em;
+}
+.brand-place {
+  font: 500 10px/1 var(--font-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-top: 4px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  font: 500 13.5px/1 var(--font-body);
+  flex-wrap: wrap;
+}
+.main-nav a {
+  color: var(--white);
+  padding: 4px 2px;
+}
+.main-nav a:not(.btn):hover {
+  color: var(--yellow);
+}
+.btn {
+  display: inline-block;
+  border-radius: var(--radius);
+  font: 700 14px/1 var(--font-body);
+  padding: 15px 22px;
+  text-align: center;
+}
+.btn-sm {
+  font-size: 13.5px;
+  padding: 9px 16px;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--navy-dark);
+}
+.btn-accent {
+  background: var(--yellow);
+  color: var(--navy);
+  font-weight: 700;
+}
+.btn-accent:hover {
+  background: var(--yellow-dark);
+}
+.btn-outline {
+  border: 1px solid rgba(22, 48, 92, 0.4);
+  color: var(--navy);
+}
+.btn-outline:hover {
+  border-color: var(--navy);
+  background: rgba(22, 48, 92, 0.04);
+}
+
+/* ---- Hero ---- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: stretch;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.hero-content {
+  padding: 56px 44px 52px;
+  background: var(--cream);
+}
+.hero-photo-wrap {
+  position: relative;
+  min-height: 460px;
+  background: #dfe6ee;
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+.eyebrow-badge {
+  display: inline-block;
+  font: 500 10.5px/1 var(--font-body);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border: 1px solid rgba(22, 48, 92, 0.35);
+  padding: 7px 12px;
+  border-radius: var(--radius);
+}
+
+.hero h1 {
+  margin-top: 22px;
+  font: 400 52px/1.06 var(--font-heading);
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+.hero-body {
+  margin-top: 20px;
+  max-width: 44ch;
+  font: 400 17px/1.6 var(--font-body);
+  color: var(--text-body);
+  text-wrap: pretty;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.stat-row {
+  display: flex;
+  gap: 36px;
+  margin-top: 40px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hairline-strong);
+  flex-wrap: wrap;
+}
+.stat-value {
+  font: 600 26px/1 var(--font-heading);
+  color: var(--navy);
+}
+.stat-label {
+  font: 400 12.5px/1.4 var(--font-body);
+  color: var(--text-meta);
+  margin-top: 5px;
+}
+
+/* ---- Reasons band ---- */
+.reasons-band {
+  background: var(--white);
+  border-top: 1px solid var(--hairline-soft);
+}
+.reasons-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.reasons-header h2 {
+  font: 400 34px/1.1 var(--font-heading);
+  color: var(--navy);
+}
+.reasons-note {
+  font: 400 13px/1.5 var(--font-body);
+  color: var(--text-meta);
+  max-width: 34ch;
+  text-align: right;
+}
+.reasons-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  counter-reset: reason;
+}
+.reasons-grid li {
+  background: var(--white);
+  padding: 26px 24px;
+  counter-increment: reason;
+}
+.reason-number {
+  font: 700 12px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.reason-number::before {
+  content: counter(reason, decimal-leading-zero);
+}
+.reasons-grid h3 {
+  margin: 12px 0 8px;
+  font: 600 18px/1.25 var(--font-heading);
+  color: var(--navy);
+}
+.reasons-grid p {
+  font: 400 14.5px/1.6 var(--font-body);
+  color: var(--text-muted);
+}
+
+/* ---- Two-up bands (When we sail / Racing, Membership / Find us) ---- */
+.two-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.two-up.hairline-gap {
+  gap: 1px;
+  background: var(--hairline);
+}
+.two-up > div {
+  padding: 48px 44px;
+}
+.two-up.hairline-gap > div {
+  background: var(--white);
+}
+.panel-navy {
+  background: var(--navy) !important;
+  color: var(--white);
+}
+.panel-cream {
+  background: var(--cream) !important;
+}
+.panel-bordered {
+  background: var(--cream);
+  border-left: 1px solid var(--hairline);
+}
+
+.eyebrow {
+  font: 500 10.5px/1 var(--font-body);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-eyebrow);
+}
+.eyebrow-accent {
+  color: var(--yellow);
+}
+.two-up h2 {
+  margin: 16px 0 18px;
+  font: 400 32px/1.15 var(--font-heading);
+  color: var(--navy);
+}
+.panel-navy h2 {
+  color: var(--white);
+}
+.two-up p {
+  font: 400 15.5px/1.65 var(--font-body);
+  color: var(--text-muted);
+}
+.panel-navy p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.sailing-days {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.sailing-days > div {
+  flex: 1;
+  min-width: 90px;
+  border: 1px solid rgba(242, 197, 0, 0.5);
+  padding: 16px 14px;
+}
+.sailing-day {
+  font: 700 15px/1 var(--font-body);
+  color: var(--yellow);
+}
+.sailing-detail {
+  font: 400 12.5px/1.4 var(--font-body);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
+}
+
+.notice {
+  margin-top: 28px;
+  padding: 20px 22px;
+  background: var(--white);
+  border-left: 3px solid var(--yellow);
+}
+.notice-kicker {
+  font: 700 13px/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.notice-body {
+  margin-top: 8px;
+  font: 400 15px/1.55 var(--font-body);
+  color: var(--text-muted);
+}
+
+/* Membership / Find us band */
+.membership-band {
+  background: var(--white);
+}
+.membership-band > div {
+  padding: 52px 44px;
+}
+.membership-band h2 {
+  margin: 16px 0 14px;
+  font: 400 34px/1.12 var(--font-heading);
+  color: var(--navy);
+}
+.membership-band p {
+  margin-bottom: 24px;
+  max-width: 46ch;
+  font: 400 15.5px/1.65 var(--font-body);
+  color: var(--text-muted);
+}
+.membership-steps {
+  list-style: decimal;
+  margin: 0 0 28px;
+  padding-left: 20px;
+  font: 400 15px/1.9 var(--font-body);
+  color: var(--text-muted);
+}
+.find-us-panel p {
+  margin-bottom: 22px;
+  max-width: 46ch;
+  font: 400 15.5px/1.65 var(--font-body);
+  color: var(--text-muted);
+}
+
+.map-frame {
+  height: 220px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+}
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.directions-link {
+  display: inline-block;
+  margin-top: 14px;
+  font: 700 13.5px/1 var(--font-body);
+  color: var(--navy);
+  border-bottom: 1px solid rgba(22, 48, 92, 0.4);
+  padding-bottom: 2px;
+}
+.directions-link:hover {
+  color: var(--navy-dark);
+  border-color: var(--navy-dark);
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 44px 44px 34px;
+}
+.footer-grid {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.footer-brand {
+  font: 700 20px/1.1 var(--font-heading);
+}
+.footer-address {
+  margin-top: 10px;
+  font: 400 14px/1.7 var(--font-body);
+  color: rgba(255, 255, 255, 0.72);
+}
+.footer-kicker {
+  font: 700 11px/1 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.footer-contact {
+  margin-top: 12px;
+  font: 400 14px/1.8 var(--font-body);
+  color: rgba(255, 255, 255, 0.82);
+}
+.footer-contact a:hover {
+  color: var(--yellow);
+}
+.footer-affiliated {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.rya-logo {
+  width: 130px;
+  background: var(--white);
+  padding: 6px;
+  border-radius: var(--radius);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 900px) {
+  .band { padding: 40px 28px; }
+  .hero-content { padding: 44px 28px 40px; }
+  .site-header { padding: 16px 24px; }
+  .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 28px; }
+  .footer-affiliated { grid-column: 1 / -1; }
+}
+
+@media (max-width: 780px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-content { order: 2; }
+  .hero-photo-wrap { order: 1; min-height: 280px; }
+  .hero h1 { font-size: 36px; }
+
+  .two-up { grid-template-columns: 1fr; }
+  .two-up.hairline-gap { gap: 1px; }
+  .panel-bordered { border-left: 0; border-top: 1px solid var(--hairline); }
+}
+
+@media (max-width: 680px) {
+  .band { padding: 28px 20px; }
+  .hero-content { padding: 32px 20px 28px; }
+  .two-up > div,
+  .membership-band > div { padding: 28px 20px; }
+  .site-footer { padding: 32px 20px 24px; }
+  .site-header-inner { flex-direction: column; align-items: stretch; }
+  .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .hero h1 { font-size: 30px; }
+  .stat-row { gap: 24px; }
+  .reasons-grid { grid-template-columns: 1fr; }
+  .reasons-header { flex-direction: column; align-items: flex-start; }
+  .reasons-note { text-align: left; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-affiliated { grid-column: auto; }
+}
