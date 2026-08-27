@@ -25,7 +25,7 @@ and replace every match:
 | Value | Appears in |
 |---|---|
 | Membership fee (`£30`) | hero stat row, Membership heading |
-| Sailing days (`Wed`, `Sat`, `Sun`) | hero stat row, "When we sail" boxes |
+| Sailing days (`Wed`, `Sun`, `Sat`) | hero stat row, "When we sail" heading and boxes |
 | Founding year / anniversary (`1976`, `50`) | hero badge, hero stat row, footer |
 | Contact email | hero button, footer |
 | Membership form filename | hero button `href`, Membership button `href` — and the actual file in `assets/` |
@@ -77,16 +77,22 @@ the 4.5:1 contrast ratio required for small text.
   sits on a yellow plate in the header and favicon. A transparent PNG/SVG
   from the club would look cleaner — drop the yellow plate (`.brand-logo`
   background) if one is provided.
-- **Domain**: `index.html` has placeholder URLs
-  (`https://www.firbecksailingclub.org.uk/`) in the canonical link and Open
-  Graph tags. Update these to the real domain once hosting is set up,
-  otherwise social media previews and search engines will point at the
-  wrong address.
+- **Domain**: the site is hosted on GitHub Pages at
+  `https://ashtagging.github.io/firbeck-sailing-club/`, and `index.html`'s
+  canonical link, Open Graph tags and JSON-LD `url` all point there. If the
+  club buys a custom domain later, update those values and add a `CNAME`
+  file with the new domain (GitHub Pages settings will prompt for this).
 - **PDF membership form**: a PDF version would be friendlier on phones than
   the Word doc. Worth asking the club for one.
 
 ## Deploying
 
-This is a static site — no build step. Deploy by connecting the GitHub repo
-to Netlify, Cloudflare Pages, or GitHub Pages and pointing it at the repo
-root. Any push to `main` will publish automatically.
+This is a static site — no build step, so there's nothing to "deploy" beyond
+pushing to GitHub. It's hosted on **GitHub Pages**, serving from the
+`master` branch, repo root. Any push to `master` republishes automatically
+within a minute or two — check progress under the repo's **Actions** tab if
+a change doesn't appear.
+
+The repo is public (GitHub Pages on the free plan requires a public repo).
+There's nothing sensitive in it — bank details live only in the Word
+membership form, which is itself meant to be publicly downloadable.
