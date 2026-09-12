@@ -24,12 +24,12 @@ and replace every match:
 
 | Value | Appears in |
 |---|---|
-| Membership fee (`£30`) | hero stat row, Membership heading |
-| Sailing days (`Wed`, `Sun`, `Sat`) | hero stat row, "When we sail" heading and boxes |
-| Founding year / anniversary (`1976`, `50`) | hero badge, hero stat row, footer |
+| Membership fee (`£30`) | Membership heading |
+| 2026 part-year rate (`£10`) | Membership panel, just under the `£30` heading |
+| Founding year / anniversary (`1976`, `50`) | hero badge, footer |
 | Contact email | hero button, footer |
 | Membership form filename | hero button `href`, Membership button `href` — and the actual file in `assets/` |
-| "Coming up" notice | the yellow-edged box in the "Racing, sort of" panel |
+| "Coming up" notice | the yellow-edged box in the "When we sail" panel |
 
 ### Updating the membership form each year
 
@@ -48,7 +48,7 @@ phones — resize to roughly 1600px wide and save as JPEG before adding.
 
 ### Adding a notice
 
-The "Coming in summer 2026" box in the "Racing, sort of" panel is the one
+The "Coming in winter 2026" box in the "When we sail" panel is the one
 place for club news. Edit `notice-kicker` and `notice-body` text directly.
 This is deliberately a single item, not a noticeboard — ask before turning
 it into a list.
