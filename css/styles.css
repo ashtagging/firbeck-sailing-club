@@ -151,7 +151,7 @@ button:focus-visible {
   font: 500 13.5px/1 var(--font-body);
   flex-wrap: wrap;
 }
-.main-nav a {
+.main-nav a:not(.btn) {
   color: var(--white);
   padding: 4px 2px;
 }
@@ -253,10 +253,13 @@ button:focus-visible {
 .stat-row {
   display: flex;
   gap: 36px;
-  margin-top: 40px;
-  padding-top: 26px;
+  margin-top: 28px;
+  padding-top: 20px;
   border-top: 1px solid var(--hairline-strong);
   flex-wrap: wrap;
+}
+.stat-row .hero-body {
+  margin-top: 0;
 }
 .stat-value {
   font: 600 26px/1 var(--font-heading);
@@ -284,12 +287,6 @@ button:focus-visible {
 .reasons-header h2 {
   font: 400 34px/1.1 var(--font-heading);
   color: var(--navy);
-}
-.reasons-note {
-  font: 400 13px/1.5 var(--font-body);
-  color: var(--text-meta);
-  max-width: 34ch;
-  text-align: right;
 }
 .reasons-grid {
   list-style: none;
@@ -377,28 +374,6 @@ button:focus-visible {
   color: rgba(255, 255, 255, 0.78);
 }
 
-.sailing-days {
-  display: flex;
-  gap: 10px;
-  margin-top: 26px;
-  flex-wrap: wrap;
-}
-.sailing-days > div {
-  flex: 1;
-  min-width: 90px;
-  border: 1px solid rgba(242, 197, 0, 0.5);
-  padding: 16px 14px;
-}
-.sailing-day {
-  font: 700 15px/1 var(--font-body);
-  color: var(--yellow);
-}
-.sailing-detail {
-  font: 400 12.5px/1.4 var(--font-body);
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 6px;
-}
-
 .notice {
   margin-top: 28px;
   padding: 20px 22px;
@@ -414,6 +389,15 @@ button:focus-visible {
 .notice-body {
   margin-top: 8px;
   font: 400 15px/1.55 var(--font-body);
+  color: var(--text-muted);
+}
+/* The notice box is always white, so its text must stay dark even when
+   it sits inside a navy panel — the .panel-navy p rule would otherwise
+   win on specificity and turn the text white-on-white. */
+.panel-navy .notice-kicker {
+  color: var(--navy);
+}
+.panel-navy .notice-body {
   color: var(--text-muted);
 }
 
@@ -565,7 +549,6 @@ button:focus-visible {
   .stat-row { gap: 24px; }
   .reasons-grid { grid-template-columns: 1fr; }
   .reasons-header { flex-direction: column; align-items: flex-start; }
-  .reasons-note { text-align: left; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-affiliated { grid-column: auto; }
 }
