@@ -14,6 +14,10 @@ css/styles.css   All styling (colours, fonts, spacing, layout)
 assets/          Photos, logos, and the membership form
 ```
 
+For a non-technical, step-by-step guide to changing any wording on the
+site (aimed at a volunteer with no coding background), see
+[EDITING.md](EDITING.md).
+
 ## Making common content changes
 
 There is no separate "content file" — values are written directly into
@@ -77,11 +81,14 @@ the 4.5:1 contrast ratio required for small text.
   sits on a yellow plate in the header and favicon. A transparent PNG/SVG
   from the club would look cleaner — drop the yellow plate (`.brand-logo`
   background) if one is provided.
-- **Domain**: the site is hosted on GitHub Pages at
-  `https://ashtagging.github.io/firbeck-sailing-club/`, and `index.html`'s
-  canonical link, Open Graph tags and JSON-LD `url` all point there. If the
-  club buys a custom domain later, update those values and add a `CNAME`
-  file with the new domain (GitHub Pages settings will prompt for this).
+- **Domain**: the site is hosted on GitHub Pages, served on the custom
+  domain `firbecksailingclub.com` via the root `CNAME` file. `index.html`'s
+  canonical link, Open Graph tags and JSON-LD `url` all point there. DNS
+  for the domain must have four `A` records (at `@`) pointing to GitHub
+  Pages' IPs (185.199.108.153, .109.153, .110.153, .111.153), plus a
+  `CNAME` record for `www` pointing to `ashtagging.github.io`, set at
+  wherever the domain was bought. Once DNS is correct, tick **Enforce
+  HTTPS** under the repo's Settings → Pages.
 - **PDF membership form**: a PDF version would be friendlier on phones than
   the Word doc. Worth asking the club for one.
 
