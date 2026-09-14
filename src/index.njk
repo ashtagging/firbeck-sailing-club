@@ -178,5 +178,20 @@
   </div>
 </footer>
 
+<!-- Only used to catch Netlify Identity invite/password-reset links, which
+     point at the homepage. Does not affect page content — everything above
+     renders the same with JavaScript off. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
