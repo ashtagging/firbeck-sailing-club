@@ -1,65 +1,66 @@
-# All the wording on the website lives in this one file.
-# Edit it through the /admin CMS screen, or directly here — either way
-# updates the live site the same way.
-
 header:
-  club_name: "Firbeck Sailing Club"
-  place_name: "Rother Valley Country Park"
-
+  club_name: Firbeck Sailing Club
+  place_name: Rother Valley Country Park
 hero:
-  badge: "50th Anniversary · 1976–2026"
-  heading: "A family-friendly sailing club on the water at Rother Valley"
-  statement: "We welcome all watersports enthusiasts, not just sailors."
-
+  badge: 50th Anniversary · 1976–2026
+  heading: A family-friendly sailing club on the water at Rother Valley
+  statement: We welcome all watersports enthusiasts, not just sailors.
 reasons:
-  heading: "Plenty of reasons to join us"
+  heading: Plenty of reasons to join us
   items:
-    - title: "No experience or boat needed"
-      text: "Boats, kayaks, paddleboards and watersports kit are all available to hire at the Council's watersports centre."
-    - title: "Friendly, informal tuition"
-      text: "Experienced members happily give advice and taster sessions to novices and beginners."
-    - title: "Free tea and coffee"
-      text: "Our meeting area keeps the kettle on — just bring your own milk and something to eat."
-    - title: "Secure boat storage"
-      text: "The Park provides a secure hardcore compound (fees payable to the Council) and a safe launching area."
-    - title: "No club duties"
-      text: "Nobody puts you on a rota. Just turn up and sail."
-    - title: "A whole park to enjoy"
-      text: "Ample parking and lots to do on and off the water, so the family is never short of something to do."
-
+    - title: No experience or boat needed
+      text: Boats, kayaks, paddleboards and watersports kit are all available to hire
+        at the Council's watersports centre.
+    - title: Friendly, informal tuition
+      text: Experienced members happily give advice and taster sessions to novices and
+        beginners.
+    - title: Free tea and coffee
+      text: Our meeting area keeps the kettle on — just bring your own milk and
+        something to eat.
+    - title: Secure boat storage
+      text: The Park provides a secure hardcore compound (fees payable to the Council)
+        and a safe launching area.
+    - title: No club duties
+      text: Nobody puts you on a rota. Just turn up and sail.
+    - title: A whole park to enjoy
+      text: Ample parking and lots to do on and off the water, so the family is never
+        short of something to do.
 when_we_sail:
-  kicker: "When we sail"
-  heading: "Sailing throughout the week"
-  text: "There's no fixed sailing day — members sail mornings and evenings throughout the week, with some informal racing on Fridays. The lake and facilities are open every day through the summer, and there's a programme of social events for members through the year."
-
+  kicker: When we sail
+  heading: Sailing throughout the week
+  text: There's no fixed sailing day — members sail mornings and evenings
+    throughout the week, with some informal racing on Fridays and Sundays. The
+    lake and facilities are open every day through the summer, and there's a
+    programme of social events for members through the year.
 notice:
-  kicker: "Coming in winter 2026"
-  text: "A brand new clubhouse for the club's 50th year."
-
+  kicker: Coming in winter 2026
+  text: A brand new clubhouse for the club's 50th year.
 racing:
-  kicker: "Racing, sort of"
-  heading: "Informal races, limited rules, plenty of fun"
-  text: "We're not a racing club as such, but we run informal races through the year to sharpen your skills and add some excitement. On non-race days you'll always find members willing to chase each other round the buoys."
-
+  kicker: Racing, sort of
+  heading: Informal races, limited rules, plenty of fun
+  text: We're not a racing club as such, but we run informal races through the
+    year to sharpen your skills and add some excitement. On non-race days you'll
+    always find members willing to chase each other round the buoys.
 membership:
-  kicker: "Membership"
-  heading: "£30 a year for the whole family"
-  part_year_note: "It's £10 for the remainder of 2026 (September–December)."
-  text: "Annual membership for a family with children under 18. Download the form, fill it in, and pay by bank transfer — the account details are on the form."
+  kicker: Membership
+  heading: £30 a year for the whole family
+  part_year_note: It's £10 for the remainder of 2026 (September–December).
+  text: Annual membership for a family with children under 18. Download the form,
+    fill it in, and pay by bank transfer — the account details are on the form.
   steps:
-    - "Download and fill in the 2026 membership form"
-    - "Pay the subscription by bank transfer, using your name as the reference"
-    - "Email the form to the secretary — then come and sail"
-  button_text: "Download the 2026 form (Word)"
-
+    - Download and fill in the 2026 membership form
+    - Pay the subscription by bank transfer, using your name as the reference
+    - Email the form to the secretary — then come and sail
+  button_text: Download the 2026 form (Word)
 find_us:
-  kicker: "Find us"
-  heading: "Rother Valley Country Park"
-  text: "We've sailed here since the Park opened in 1983. The lake is managed by Rotherham Council, who provide changing rooms, safety cover, dinghy hire and RYA courses."
-
+  kicker: Find us
+  heading: Rother Valley Country Park
+  text: We've sailed here since the Park opened in 1983. The lake is managed by
+    Rotherham Council, who provide changing rooms, safety cover, dinghy hire and
+    RYA courses.
 footer:
-  club_name: "Firbeck Sailing Club"
-  address: "Rother Valley Country Park, Rotherham"
-  founded_note: "Founded 1976 · here since 1983"
-  email: "firbecksailingclub@outlook.com"
-  secretary_name: "John Littlewood"
+  club_name: Firbeck Sailing Club
+  address: Rother Valley Country Park, Rotherham
+  founded_note: Founded 1976 · here since 1983
+  email: firbecksailingclub@outlook.com
+  secretary_name: John Littlewood
