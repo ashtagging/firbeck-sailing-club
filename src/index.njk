@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Firbeck Sailing Club — sailing at Rother Valley Country Park, Rotherham</title>
+<meta name="description" content="A family-friendly sailing club at Rother Valley Country Park, Rotherham. No experience or boat needed — £30 a year for the whole family. Sailing throughout the week.">
+
+<!-- Hosted on Netlify, served on the custom domain configured there. -->
+<link rel="canonical" href="https://firbecksailingclub.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Firbeck Sailing Club">
+<meta property="og:title" content="Firbeck Sailing Club — sailing at Rother Valley Country Park">
+<meta property="og:description" content="A family-friendly sailing club at Rother Valley Country Park, Rotherham. No experience or boat needed — £30 a year for the whole family.">
+<meta property="og:image" content="https://firbecksailingclub.com/assets/boats.jpg">
+<meta property="og:url" content="https://firbecksailingclub.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "additionalType": "https://schema.org/SportsClub",
+  "name": "Firbeck Sailing Club",
+  "description": "A family-friendly sailing club at Rother Valley Country Park, Rotherham. No experience or boat needed.",
+  "url": "https://firbecksailingclub.com/",
+  "email": "firbecksailingclub@outlook.com",
+  "sameAs": ["https://www.facebook.com/firbecksailing"],
+  "foundingDate": "1976",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rotherham",
+    "postalCode": "S26 5PQ",
+    "addressCountry": "GB"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="brand">
+      <img class="brand-logo" src="assets/logo.jpg" alt="Firbeck Sailing Club crest">
+      <div>
+        <div class="brand-name">{{ text.header.club_name }}</div>
+        <div class="brand-place">{{ text.header.place_name }}</div>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#why-join">Why join</a>
+      <a href="#when-we-sail">When we sail</a>
+      <a href="#membership">Membership</a>
+      <a href="#find-us">Find us</a>
+      <a class="btn btn-accent btn-sm" href="#membership">Join the club</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-content">
+      <span class="eyebrow-badge">{{ text.hero.badge }}</span>
+      <h1 id="hero-heading">{{ text.hero.heading }}</h1>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="assets/FSC-membership-form-2026.docx" download>Download membership form <span class="visually-hidden">(Word document)</span></a>
+        <a class="btn btn-accent" href="mailto:{{ text.footer.email }}">Email the club</a>
+      </div>
+      <div class="stat-row">
+        <p class="hero-body">{{ text.hero.statement }}</p>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="assets/boats.jpg" alt="Two dinghies sailing on the lake at Rother Valley" width="807" height="807">
+    </div>
+  </section>
+
+  <!-- Reasons to join -->
+  <section id="why-join" class="band reasons-band" aria-labelledby="reasons-heading">
+    <div class="band-inner">
+      <div class="reasons-header">
+        <h2 id="reasons-heading">{{ text.reasons.heading }}</h2>
+      </div>
+      <ol class="reasons-grid">
+        {%- for item in text.reasons.items %}
+        <li>
+          <span class="reason-number" aria-hidden="true"></span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <!-- When we sail / Racing -->
+  <section class="two-up hairline-gap" aria-label="When we sail and racing">
+    <div id="when-we-sail" class="panel-navy">
+      <p class="eyebrow eyebrow-accent">{{ text.when_we_sail.kicker }}</p>
+      <h2>{{ text.when_we_sail.heading }}</h2>
+      <p>{{ text.when_we_sail.text }}</p>
+      <div class="notice">
+        <p class="notice-kicker">{{ text.notice.kicker }}</p>
+        <p class="notice-body">{{ text.notice.text }}</p>
+      </div>
+    </div>
+    <div class="panel-cream">
+      <p class="eyebrow">{{ text.racing.kicker }}</p>
+      <h2>{{ text.racing.heading }}</h2>
+      <p>{{ text.racing.text }}</p>
+    </div>
+  </section>
+
+  <!-- Membership / Find us -->
+  <section class="two-up membership-band" aria-label="Membership and location">
+    <div id="membership">
+      <p class="eyebrow">{{ text.membership.kicker }}</p>
+      <h2>{{ text.membership.heading }}</h2>
+      <p>{{ text.membership.part_year_note }}</p>
+      <p>{{ text.membership.text }}</p>
+      <ol class="membership-steps">
+        {%- for step in text.membership.steps %}
+        <li>{{ step }}</li>
+        {%- endfor %}
+      </ol>
+      <a class="btn btn-accent" href="assets/FSC-membership-form-2026.docx" download>{{ text.membership.button_text }}</a>
+    </div>
+    <div id="find-us" class="panel-bordered find-us-panel">
+      <p class="eyebrow">{{ text.find_us.kicker }}</p>
+      <h2>{{ text.find_us.heading }}</h2>
+      <p>{{ text.find_us.text }}</p>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=Rother+Valley+Country+Park,+S26+5PQ&output=embed"
+          title="Map showing Rother Valley Country Park, S26 5PQ"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a class="directions-link" href="https://www.google.com/maps/dir/?api=1&destination=Rother+Valley+Country+Park+S26+5PQ" target="_blank" rel="noopener">Get directions (opens Google Maps)</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">{{ text.footer.club_name }}</div>
+      <p class="footer-address">{{ text.footer.address }}<br>{{ text.footer.founded_note }}</p>
+    </div>
+    <div>
+      <p class="footer-kicker">Get in touch</p>
+      <p class="footer-contact">
+        <a href="mailto:{{ text.footer.email }}">{{ text.footer.email }}</a><br>
+        <a href="https://www.facebook.com/firbecksailing" target="_blank" rel="noopener">Find us on Facebook</a><br>
+        Secretary: {{ text.footer.secretary_name }}
+      </p>
+    </div>
+    <div class="footer-affiliated">
+      <p class="footer-kicker">Affiliated</p>
+      <img class="rya-logo" src="assets/rya.jpg" alt="RYA affiliated club">
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

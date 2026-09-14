@@ -1,0 +1,26 @@
+{
+  "name": "firbeck-sailing-club",
+  "version": "1.0.0",
+  "description": "A one-page website for Firbeck Sailing Club at Rother Valley Country Park, Rotherham.",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashtagging/firbeck-sailing-club.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ashtagging/firbeck-sailing-club/issues"
+  },
+  "homepage": "https://github.com/ashtagging/firbeck-sailing-club#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "js-yaml": "^5.4.2"
+  }
+}

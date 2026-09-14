@@ -1,0 +1,100 @@
+backend:
+  name: git-gateway
+  branch: master
+
+# This is what dad sees after logging in — one screen, "Website Text",
+# with a labelled box for every sentence on the site. Publishing here
+# saves src/_data/content.yaml, which Netlify then rebuilds into the
+# live page automatically.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "content"
+    label: "Website Text"
+    files:
+      - name: "text"
+        label: "All Page Text"
+        file: "src/_data/text.yaml"
+        fields:
+          - label: "Header"
+            name: "header"
+            widget: "object"
+            fields:
+              - { label: "Club name", name: "club_name", widget: "string" }
+              - { label: "Place name", name: "place_name", widget: "string" }
+
+          - label: "Top of the page (hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Anniversary badge", name: "badge", widget: "string" }
+              - { label: "Main heading", name: "heading", widget: "string" }
+              - { label: "Welcome statement", name: "statement", widget: "text" }
+
+          - label: "Reasons to join"
+            name: "reasons"
+            widget: "object"
+            fields:
+              - { label: "Section heading", name: "heading", widget: "string" }
+              - label: "The six reasons"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "When we sail"
+            name: "when_we_sail"
+            widget: "object"
+            fields:
+              - { label: "Small label above the heading", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph", name: "text", widget: "text" }
+
+          - label: "Notice box (e.g. clubhouse news)"
+            name: "notice"
+            widget: "object"
+            fields:
+              - { label: "Kicker, e.g. 'Coming in winter 2026'", name: "kicker", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Racing panel"
+            name: "racing"
+            widget: "object"
+            fields:
+              - { label: "Small label above the heading", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph", name: "text", widget: "text" }
+
+          - label: "Membership"
+            name: "membership"
+            widget: "object"
+            fields:
+              - { label: "Small label above the heading", name: "kicker", widget: "string" }
+              - { label: "Heading (the yearly fee)", name: "heading", widget: "string" }
+              - { label: "Part-year note", name: "part_year_note", widget: "string" }
+              - { label: "Paragraph", name: "text", widget: "text" }
+              - label: "The three steps to join"
+                name: "steps"
+                widget: "list"
+                field: { label: "Step", name: "step", widget: "string" }
+              - { label: "Download button text", name: "button_text", widget: "string" }
+
+          - label: "Find us"
+            name: "find_us"
+            widget: "object"
+            fields:
+              - { label: "Small label above the heading", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph", name: "text", widget: "text" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Club name", name: "club_name", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "Founded note", name: "founded_note", widget: "string" }
+              - { label: "Contact email", name: "email", widget: "string" }
+              - { label: "Secretary name", name: "secretary_name", widget: "string" }
